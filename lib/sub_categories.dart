@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/details_page.dart';
 
 import 'models/cateory_model.dart';
 
@@ -29,6 +30,13 @@ class SubCategories extends StatelessWidget {
           );
           return ListTile(
             title: Text(subcategory.name),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const DetailsPage(),
+                ),
+              );
+            },
             // You can customize ListTile onTap to perform actions.
           );
         },
