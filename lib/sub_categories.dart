@@ -3,6 +3,7 @@ import 'package:flutter_learning/database_1.dart';
 import 'package:flutter_learning/details_page.dart';
 import 'package:flutter_learning/grid_1.dart';
 import 'package:flutter_learning/list_1.dart';
+import 'package:flutter_learning/pageview/page_view_1.dart';
 
 import 'models/cateory_model.dart';
 
@@ -60,6 +61,13 @@ class SubCategories extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const DatabaseOne(),
+                    ),
+                  );
+                }
+                else if(id==6 &&subcategory.subItemId==1) {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) =>  const PageViewOne(),
                     ),
                   );
                 }
