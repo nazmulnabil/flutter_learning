@@ -52,17 +52,19 @@ class _CategoryListState extends State<CategoryList> {
         itemBuilder: (BuildContext context, int index) {
           final category = data[index];
           ///put this item section into separate custom widget.
-          return ListTile(
-            leading: Text("$index.",
-              style: const TextStyle(fontSize: textSIze), ),
-            title: Text(category.name),
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => SubCategories(category: category),
-                ),
-              );
-            },
+          return Card(
+            child: ListTile(
+              leading: Text("$index.",
+                style: const TextStyle(fontSize: textSIze), ),
+              title: Text(category.name),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SubCategories(category: category, id: category.id,),
+                  ),
+                );
+              },
+            ),
           );
           ///
         },
